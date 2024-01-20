@@ -11,6 +11,7 @@ function Home() {
   const router = useRouter();
 
   const { data: session } = useSession();
+  const [isPurchasedStatus, setIsPurchasedStatus] = useState(false);
   const [loadingStatus, setLoadingStatus] = useState({
     loading: false,
     success: false,
@@ -87,12 +88,14 @@ function Home() {
         if (data.data.data) {
           router.push("/dashboard");
         }
+        setIsPurchasedStatus(true);
       } catch (e) {
         console.log(e);
+        setIsPurchasedStatus(true);
       }
     }
     checkDatabase();
-  }, [session]);
+  }, [session, router]);
   useEffect(() => {
     if (loadingStatus.error) {
       setTimeout(() => {
@@ -121,7 +124,7 @@ function Home() {
     <>
       <main className="">
         <Layout>
-          {session?.user ? (
+          {session?.user && isPurchasedStatus ? (
             <div className="flex flex-col justify-center items-center h-64">
               <p>
                 As this project is for testing purpose, we are using testnet
