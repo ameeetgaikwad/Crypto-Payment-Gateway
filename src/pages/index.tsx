@@ -15,7 +15,7 @@ export default function Home() {
       <Head>
         <title>Home Page</title>
       </Head>
-      {session !== null ? (
+      {session?.user ? (
         <div className="flex flex-row justify-center h-screen">
           <HomePage />
         </div>
