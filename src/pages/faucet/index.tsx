@@ -22,7 +22,17 @@ function Faucet() {
     if (session === null) {
       router.push("/");
     }
-  }, [session]);
+    if (loadingStatus.success) {
+      setTimeout(() => {
+        setLoadingStatus({
+          loading: false,
+          success: false,
+          error: false,
+          idle: true,
+        });
+      }, 2000);
+    }
+  }, [session, loadingStatus]);
   async function claimFaucet() {
     setLoadingStatus({
       loading: true,
@@ -109,7 +119,7 @@ function Faucet() {
                 Get Tokens
               </button>
             </div>
-            <div className="flex flex-row justify-center">
+            <div className="flex flex-row justify-center items-center absolute top-[60%] right-[50%]">
               {!loadingStatus.idle ? (
                 <span className="loading loading-spinner text-primary "></span>
               ) : (
@@ -135,6 +145,29 @@ function Faucet() {
                   />
                 </svg>
                 <span>Connect your wallet!</span>
+              </div>
+            ) : (
+              ""
+            )}
+            {loadingStatus.success == true ? (
+              <div
+                role="alert"
+                className="alert alert-success absolute top-3 w-[40%] mx-auto left-0 right-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="stroke-current shrink-0 h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                  />
+                </svg>
+                <span>Tokens sent</span>
               </div>
             ) : (
               ""
