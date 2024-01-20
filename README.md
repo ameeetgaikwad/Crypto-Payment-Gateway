@@ -17,4 +17,4 @@
 - Faucet.sol: `0xb910de2349eb28985f2140ff286f70046beba916`
 
 ## Future improvements
-- I can use The Graph to index events and make the the `moveFunds` function emit events with email address of the user. And handle all the login in the backend rather than in frontend.
+- I can use The Graph to index events and make the the `moveFunds` function emit event with email address of the user. And handle all the login in the backend rather than in frontend.
