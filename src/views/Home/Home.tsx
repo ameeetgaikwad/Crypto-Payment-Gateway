@@ -65,7 +65,7 @@ function Home() {
               idle: true,
             });
           }
-        }, 20000);
+        }, 25000);
       }
     } catch (e) {
       console.log(e);
