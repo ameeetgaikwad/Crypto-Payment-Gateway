@@ -124,13 +124,19 @@ function Home() {
           {session?.user ? (
             <div className="flex flex-col justify-center items-center h-64">
               <p>
-                As this is project not in production, we are using testnet
+                As this project is for testing purpose, we are using testnet
                 (mumbai polygon). So you need to have testnet ERC20 tokens. You
                 can get it at{" "}
                 <Link className="text-blue-700" target="blank" href={"/faucet"}>
                   Faucet
                 </Link>
                 .
+              </p>
+              <br />
+              <p>
+                Also it is advised to use metamask and, only the tokens obtained
+                using the given faucet can be used to purchase the course other
+                ERC20 tokens won&apos;t work. Course price is 2 tokens.
               </p>
               <button
                 onClick={buyCourse}
