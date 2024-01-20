@@ -18,3 +18,4 @@
 
 ## Future improvements
 - I can use The Graph to index events and make the the `moveFunds` function emit event with email address of the user. And handle all the login in the backend rather than in frontend.
+- Also I can implement it in such a way, so that user just have to make one transaction, rather than 2 in the current scenario.
