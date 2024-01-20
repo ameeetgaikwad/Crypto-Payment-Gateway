@@ -13,12 +13,12 @@ const Header = () => {
           <div>
             <ConnectButton />
           </div>
-          <div className="mr-2 flex flex-row rounded border bg-gray-200 px-2 hover:scale-[102%] transition-all duration-150">
+          <div className="mr-2 flex flex-row rounded-xl border bg-gray-200 px-2 hover:scale-[102%] transition-all duration-150">
             <button
               onClick={() => {
                 signOut();
               }}
-              className=""
+              className="p-2"
             >
               Sign out from google
             </button>
