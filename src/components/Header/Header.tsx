@@ -20,7 +20,7 @@ const Header = () => {
               }}
               className="p-2"
             >
-              Sign out from google
+              Sign out from discord
             </button>
           </div>
         </div>

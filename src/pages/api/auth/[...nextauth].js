@@ -1,13 +1,12 @@
 import NextAuth from "next-auth";
-import GithubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
+import DiscordProvider from "next-auth/providers/discord";
 
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
-    GoogleProvider({
-      clientId: process.env.NEXT_PUBLIC_GOOGLE_ID,
-      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_SECRET,
+    DiscordProvider({
+      clientId: process.env.NEXT_PUBLIC_DISCORD_ID,
+      clientSecret: process.env.NEXT_PUBLIC_DISCORD_SECRET,
     }),
     // ...add more providers here
   ],
