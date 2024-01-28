@@ -5,7 +5,7 @@ function Login() {
 
   // signOut();
   async function signInWithDiscord() {
-    await signIn("discord");
+    await signIn();
   }
   return (
     <>
